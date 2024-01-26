@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Dialog,
   DialogHeader,
@@ -12,6 +14,10 @@ import { LogIn } from "lucide-react";
 import Image from "next/image";
 
 export default function SignInDialog() {
+  function signIn() {
+    window.location.href = "/dashboard";
+  }
+
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -29,7 +35,7 @@ export default function SignInDialog() {
         </DialogHeader>
 
         <div className="">
-          <Button className="w-full">
+          <Button className="w-full" onClick={() => signIn()}>
             <Image
               width={20}
               height={20}
